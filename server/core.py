@@ -5,6 +5,8 @@ def create_app():
     app.config.from_object('config')
     app.config.from_pyfile('default.py')
 
+    setup_blueprints(app)
+    
     @app.route('/')
     def index():
         return "<h1>This is an index page.<h1>"
